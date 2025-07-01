@@ -1,7 +1,10 @@
 #!/bin/bash
 
+echo "Creating python directory..."
+mkdir -p ./python
+
 echo "Installing dependencies..."
-pip install --target ./python -r requirements.txt
+pip install --target ./python -r requirements.txt --no-deps
 
 echo "Cleaning up unnecessary files..."
 find ./python -type d -name "tests" -exec rm -rf {} +
